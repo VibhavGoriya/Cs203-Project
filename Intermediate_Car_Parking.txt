@@ -1,5 +1,5 @@
 timescale 1ns / 1ps
-module parking_system(
+module password_car_parking(
 input Clk,Reset,
 input enter_sensor, exit_sensor,
 input [1:0] Password_1, Password_2,
