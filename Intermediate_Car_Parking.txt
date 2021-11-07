@@ -1,0 +1,26 @@
+timescale 1ns / 1ps
+module parking_system(
+input Clk,Reset,
+input enter_sensor, exit_sensor,
+input [1:0] Password_1, Password_2,
+output reg [6:0] Hex_1, Hex_2,
+output wire Led_Green,Led_Red
+);
+
+reg[2:0] CurrentState, NextState;
+reg[31:0] WaitCounter;
+
+
+//Defining right and wrong passwords comes here.
+
+
+//The model uses a finite state machine. Initially, the state is Idle .If there is a vehicle coming detected by the enter sensor, State is switched to Wait for 4 cycles.
+
+//The car will input the password in this state; if the password is correct, the gate is opened to let the car get in the car park and state turns to Right,
+// Green LED will start blinking. 
+
+//Otherwise, state turns to Wrong, a Red LED will start blinking and it requires the car to enter the password again until the password is correct. 
+//When the current car gets into the parking area detected by the exit sensor and there is the next car coming,The state is switched to Stop and the Red LED will be blinking so that
+//the next car will be noticed to stop and enter the password. 
+
+//After the car passes the gate and gets into the parking area, the state returns to Idle.
